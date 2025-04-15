@@ -1,73 +1,63 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const tareaForm = document.getElementById('tareaForm');
-    const nuevaTarea = document.getElementById('nuevaTarea');
-    const listaTareas = document.getElementById('listaTareas');
-    
-    // Cargar tareas al inicio
-    cargarTareas();
-    
-    // Agregar nueva tarea
-    tareaForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      if (nuevaTarea.value.trim() === '') return;
-      
-      const formData = new FormData();
-      formData.append('accion', 'agregar');
-      formData.append('texto', nuevaTarea.value);
-      
-      fetch('tareas.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.exito) {
-          nuevaTarea.value = '';
-          cargarTareas();
+    // Manejo de autenticación
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+  
+    if (loginForm) {
+      loginForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        // Validación simple
+        if (!email || !password) {
+          showAlert('Por favor completa todos los campos', 'error');
+          return;
         }
-      });
-    });
-    
-    // Cargar tareas desde el servidor
-    function cargarTareas() {
-      fetch('tareas.php?accion=listar')
-        .then(response => response.json())
-        .then(data => {
-          listaTareas.innerHTML = '';
-          
-          data.tareas.forEach(tarea => {
-            const li = document.createElement('li');
-            li.textContent = tarea.texto;
-            li.dataset.id = tarea.id;
-            
-            const btnEliminar = document.createElement('button');
-            btnEliminar.textContent = 'Eliminar';
-            btnEliminar.addEventListener('click', function() {
-              eliminarTarea(tarea.id);
-            });
-            
-            li.appendChild(btnEliminar);
-            listaTareas.appendChild(li);
-          });
-        });
-    }
-    
-    // Eliminar tarea
-    function eliminarTarea(id) {
-      const formData = new FormData();
-      formData.append('accion', 'eliminar');
-      formData.append('id', id);
-      
-      fetch('tareas.php', {
-        method: 'POST',
-        body: formData
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.exito) {
-          cargarTareas();
-        }
+        
+        // Simulación de autenticación
+        showAlert('Iniciando sesión...', 'success');
+        setTimeout(() => {
+          window.location.href = 'dashboard.html'; // Redirigir al dashboard
+        }, 1500);
       });
     }
+  
+    if (registerForm) {
+      registerForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        
+        if (password !== confirmPassword) {
+          showAlert('Las contraseñas no coinciden', 'error');
+          return;
+        }
+        
+        showAlert('Registro exitoso. Redirigiendo...', 'success');
+        setTimeout(() => {
+          window.location.href = 'login.html';
+        }, 1500);
+      });
+    }
+  
+    // Función para mostrar alertas
+    function showAlert(message, type) {
+      const alert = document.createElement('div');
+      alert.className = `alert ${type}`;
+      alert.textContent = message;
+      document.body.appendChild(alert);
+      
+      setTimeout(() => {
+        alert.remove();
+      }, 3000);
+    }
+  
+  
+
+
+
+  
   });
+
+

@@ -1,23 +1,66 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Tareas</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Lista de Tareas</h1>
-    
-    <form id="tareaForm">
-      <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required>
-      <button type="submit">Agregar</button>
-    </form>
-    
-    <ul id="listaTareas"></ul>
-  </div>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDos-app | Organiza tus tareas</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <h1 class="logo">ToDos<span>-app</span></h1>
+        <nav class="nav">
+          <a href="#features">Funciones</a>
+          <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h2>Organiza tus tareas con estilo</h2>
+            <p>Prioriza, categoriza y nunca olvides nada con ToDos-app.</p>
+            <a href="register.html" class="btn btn-primary">Comenzar Ahora</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <h2>Características Principales</h2><br>
+          <div class="features-grid">
+            <div class="feature-card">
+              <h3>Gestión por Prioridad</h3>
+              <p>
+                Clasifica tus tareas como <span class="badge high">Alta</span>,
+                <span class="badge medium">Media</span> o
+                <span class="badge low">Baja</span> prioridad.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Filtrado Inteligente</h3>
+              <p>
+                Encuentra rápidamente lo que necesitas por categoría o estado.
+              </p>
+            </div>
+            <div class="feature-card">
+              <h3>Multiplataforma</h3>
+              <p>
+                Usa la app en tu celular o computador con diseño responsive.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>© 2023 ToDos-app. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+  </body>
 </html>
