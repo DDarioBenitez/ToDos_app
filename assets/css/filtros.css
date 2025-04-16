@@ -1,0 +1,54 @@
+/* aca esta mi css lucas */
+
+.filtros {
+    display: flex;
+    justify-content: left;
+}
+.btnDesarrollo {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btnResearch {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btnDocumentaciones {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btnHigh {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btnMedium {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.btnLow {
+    background-color: white;
+    border: 1px solid black;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+}

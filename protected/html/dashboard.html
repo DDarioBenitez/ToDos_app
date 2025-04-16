@@ -1,19 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tablero</title>
+        <title>Lista de Tareas</title>
+        <link rel="stylesheet" href="/assets/css/style.css" />
+        <link rel="stylesheet" href="/assets/css/filtros.css" />
     </head>
     <body>
-        <header>
-            <nav></nav>
-        </header>
-        <main>
-            <div>filtros</div>
-            <div>columnas</div>
+        <div class="container">
+            <h1>Lista de Tareas</h1>
 
-            <div>modal</div>
-        </main>
+            <form id="tareaForm">
+                <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required />
+                <button type="submit">Agregar</button>
+            </form>
+
+            <ul id="listaTareas"></ul>
+        </div>
+        <!-- aca hice el filtro -->
+        <div class="filtros">
+            <div>
+                <h4>Filtros</h4>
+                <h5><span>diseño</span></h5>
+                <button class="btnDesarrollo" id="desarrollo"></button><span> desarrollo</span><br />
+                <button class="btnResearch" id="research"></button><span> research</span><br />
+                <button class="btnDocumentaciones" id="documentaciones"></button><span> documentaciones</span><br /><br />
+                <h5><span>Prioridad</span></h5>
+                <button class="btnHigh" id="high"></button><span> high</span><br />
+                <button class="btnMedium" id="medium"></button><span> medium</span><br />
+                <button class="btnLow" id="low"></button><span> low</span>
+            </div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
