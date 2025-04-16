@@ -71,3 +71,67 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+
+
+  //aca empece yo luquitas
+
+  // Lista de tareas 
+  const tareas = [];
+
+  // Variables para las selecciones
+  let categoriaSeleccionada = '';
+  let prioridadSeleccionada = '';
+
+  // Función para mostrar las tareas filtradas
+  function mostrarTareas() {
+    const tareasFiltradas = tareas.filter(tarea => {
+      const cumpleCategoria = categoriaSeleccionada ? tarea.categoria === categoriaSeleccionada : true;
+      const cumplePrioridad = prioridadSeleccionada ? tarea.prioridad === prioridadSeleccionada : true;
+      return cumpleCategoria && cumplePrioridad;
+    });
+
+    const resultadoDiv = document.getElementById('resultado');
+    if (tareasFiltradas.length === 0) {
+      resultadoDiv.innerHTML = "<p>No hay tareas que coincidan con los filtros.</p>";
+    } else {
+      resultadoDiv.innerHTML = tareasFiltradas.map(tarea => `
+        <div class="tarea">
+          <strong>${tarea.titulo}</strong><br>
+          Categoría: ${tarea.categoria} | Prioridad: ${tarea.prioridad}
+        </div>
+      `).join('');
+    }
+  }
+
+  // Eventos para los botones de categoría
+  document.getElementById('desarrollo').addEventListener('click', function() {
+    categoriaSeleccionada = 'desarrollo';
+    mostrarTareas();
+  });
+
+  document.getElementById('research').addEventListener('click', function() {
+    categoriaSeleccionada = 'research';
+    mostrarTareas();
+  });
+
+  document.getElementById('documentaciones').addEventListener('click', function() {
+    categoriaSeleccionada = 'documentaciones';
+    mostrarTareas();
+  });
+
+  // Eventos para los botones de prioridad
+  document.getElementById('high').addEventListener('click', function() {
+    prioridadSeleccionada = 'high';
+    mostrarTareas();
+  });
+
+  document.getElementById('medium').addEventListener('click', function() {
+    prioridadSeleccionada = 'medium';
+    mostrarTareas();
+  });
+
+  document.getElementById('low').addEventListener('click', function() {
+    prioridadSeleccionada = 'low';
+    mostrarTareas();
+  });
