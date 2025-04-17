@@ -1,4 +1,4 @@
-/* aca esta mi css lucas */
+@import url("variables.css");
 
 .filtros {
     display: flex;
