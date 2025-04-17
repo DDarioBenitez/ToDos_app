@@ -1,192 +1,194 @@
+@import url("variables.css");
+
 .background-modal {
     display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 990;
-  background-color: rgba(0, 0, 0, 0.3);
-  /* opacity: 0.5; */
-  width: 100vw;
-  height: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 990;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* opacity: 0.5; */
+    width: 100vw;
+    height: 100vw;
 }
 
 .modal-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  opacity: 1;
-  width: 35rem;
-  position: fixed; /* Fijo en la pantalla */
-  top: 50%; /* Centrado vertical */
-  left: 50%; /* Centrado horizontal */
-  z-index: 1000;
-  transform: translate(-50%, -50%); /* Ajuste fino del centrado */
-  z-index: 1000; /* Asegura que esté por encima de todo */
-  background-color: #fff3e0;
-  /* padding: 1.3rem; */
-  padding: 1.3rem;
-  border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    opacity: 1;
+    width: 35rem;
+    position: fixed; /* Fijo en la pantalla */
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    z-index: 1000;
+    transform: translate(-50%, -50%); /* Ajuste fino del centrado */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    background-color: #fff3e0;
+    /* padding: 1.3rem; */
+    padding: 1.3rem;
+    border-radius: 1rem;
 }
 
 /* Contenedor del encabezado */
 .hearder-container {
-  position: relative;
-  
+    position: relative;
 }
 
 .hearder-container h3 {
-  text-align: left;
-  color: #ff6b35;
-  /* margin-bottom: 0.03rem; */
+    text-align: left;
+    color: #ff6b35;
+    /* margin-bottom: 0.03rem; */
 }
 
 .hearder-container span {
-  position: absolute;
-  right: 0px;
-  top: 10px;
-  width: 25px;
-  height:25px;
-  font-size: 1.4rem;
-  color: #6b4226;
-  line-height: 25px;
-  text-align: center;
-  border-radius: 50%;
-  
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 25px;
+    height: 25px;
+    font-size: 1.4rem;
+    color: #6b4226;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 50%;
 }
 
 span:hover {
-  background: #ff4e50
+    background: #ff4e50;
 }
 
 /* Nombre de la tarea */
 .nameTaskInput {
-  appearance: none;
-  outline: none;
-  padding: 0.3rem;
-  border-radius: 10px;
-  width: 100%;
-  height: 2.5rem;
-  margin: 0 auto 0.7rem;
-  border-color: rgba(0, 0, 0, 0.3);
+    appearance: none;
+    outline: none;
+    padding: 0.3rem;
+    border-radius: 10px;
+    width: 100%;
+    height: 2.5rem;
+    margin: 0 auto 0.7rem;
+    border-color: rgba(0, 0, 0, 0.3);
 }
 .nameTaskInput:focus {
-  border-color: #ff6b35;
+    border-color: #ff6b35;
 }
 
 /* Fecha y hora limites */
 .limit-container {
-  display: flex;
-  gap: 1rem;
+    display: flex;
+    gap: 1rem;
 }
 .limit-container div {
-  width: 100%;
+    width: 100%;
 }
 .limit-container div input {
-  display: block;
-  width: 100%;
-  padding: 0.3rem;
-  border-radius: 10px;
-  appearance: none;
-  outline: none;
-  border-color: rgba(0, 0, 0, 0.3);
+    display: block;
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 10px;
+    appearance: none;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.3);
+    background-color: transparent;
 }
 .limit-container div input:focus {
-  border-color: #ff6b35;
+    border-color: #ff6b35;
+    background-color: var(--color-accent);
 }
 
 .modal-container p {
-  color: #8b6b4d;
+    color: #8b6b4d;
 }
 
 /* Contenedo de la descripcion */
 .description-container label {
-  display: block;
+    display: block;
 }
 .description-container textarea {
-  width: 100%;
-  min-height: 8rem;
-  max-width: 100%;
-  min-width: 100%;
-  overflow: auto;
+    width: 100%;
+    min-height: 8rem;
+    max-width: 100%;
+    min-width: 100%;
+    overflow: auto;
 }
 
 .description-container textarea:focus {
-  border: 2px solid #ff6b35;
+    border: 2px solid #ff6b35;
 }
 
 /* contenedor de los select de categoria y prioridad */
 .optionsTaks-container {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 5px;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 5px;
 }
 
 .optionsTaks-container div {
-  width: 100%;
+    width: 100%;
 }
 
 .optionsTaks-container select {
-  width: 100%;
-  padding: 0.3rem;
-  border-radius: 10px;
-  appearance: none;
-  outline: none;
-  border-color: rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-  box-sizing: border-box;
+    width: 100%;
+    padding: 0.3rem;
+    border-radius: 10px;
+    appearance: none;
+    outline: none;
+    border-color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    box-sizing: border-box;
 }
 
 .optionsTaks-container select:focus {
-  border: 2px solid #ff6b35;
+    border: 2px solid #ff6b35;
 }
 .optionsTaks-container select option {
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  cursor: pointer;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
 }
 
 /*Afecta a todos los elementos del label */
 .modal-container .modalLabels {
-  /* display: block; */
-  font-size: 1rem;
-  color: #8b6b4d;
-  font-weight: 700;
+    /* display: block; */
+    font-size: 1rem;
+    color: #8b6b4d;
+    font-weight: 700;
 }
 
 /* estilos de botones */
 
 .container-buttons {
-  display: flex;
-  justify-content: end;
-  gap: 1rem;
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
 }
 
 .container-buttons button {
-  margin-top: 0.5rem;
-  padding: 0.3rem 1rem;
-  font-size: 1rem;
-  font-weight: 700;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  background-color: transparent;
+    margin-top: 0.5rem;
+    padding: 0.3rem 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: transparent;
 }
 
 .container-buttons .negativeButton {
-  color: #8b6b4d;
+    color: #8b6b4d;
 }
 .container-buttons .negativeButton:hover {
-  transform: translateY(-2px); /* Efecto 3D sutil */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+    transform: translateY(-2px); /* Efecto 3D sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
 }
 
 .container-buttons .positiveButton {
-  background-color: #ff6b35;
-  color: #fff3e0;
+    background-color: #ff6b35;
+    color: #fff3e0;
 }
 
 .container-buttons .positiveButton:hover {
-  transform: translateY(-1px); /* Efecto 3D sutil */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+    transform: translateY(-1px); /* Efecto 3D sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
 }

@@ -1,0 +1,50 @@
+# Ignorar dependencias de Composer
+/vendor/
+
+# Ignorar archivos de configuración local
+/.env
+/.env.local
+/.env.*.local
+
+# Ignorar archivos de caché y logs
+/cache/
+/logs/
+/tmp/
+/temp/
+
+# Ignorar archivos de sistema y editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Ignorar archivos de IDEs y editores comunes
+.idea/
+.vscode/
+*.iml
+
+# Ignorar archivos de sesiones y uploads temporales
+/sessions/
+/uploads/tmp/
+
+# Ignorar archivos compilados o generados
+*.log
+*.cache
+*.lock
+
+# Ignorar archivos de PHPUnit
+.phpunit.result.cache
+
+# Ignorar archivos de Composer
+composer.lock
+
+# Ignorar archivos de Node.js (si usas frontend con Node)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Ignorar archivos de build (si tienes)
+build/
+dist/

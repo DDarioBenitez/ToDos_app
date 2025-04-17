@@ -1,7 +1,6 @@
 <?php
 // Capturar la URL
 $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-
 // Ruta al archivo actual según la URL
 $fullPath = __DIR__ . $uri;
 
@@ -15,11 +14,17 @@ switch ($uri) {
     case "/":
         require __DIR__ . "/public/html/index.html";
         break;
-    case "/login" || "/login.html":
+    case "/login":
+    case "/login.html":
         require __DIR__ . "/public/html/login.html";
         break;
-    case "/register" || "/register.html":
+    case "/register":
+    case "/register.html":
         require __DIR__ . "/public/html/register.html";
+        break;
+    case "/dashboard":
+    case "/dashboard.html":
+        require __DIR__ . "/protected/html/dashboard.html";
         break;
     default:
         http_response_code(404);
