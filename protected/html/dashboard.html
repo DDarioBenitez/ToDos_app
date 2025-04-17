@@ -6,16 +6,21 @@
         <title>Lista de Tareas</title>
         <link rel="stylesheet" href="/assets/css/style.css" />
         <link rel="stylesheet" href="/assets/css/filtros.css" />
-        <link rel="stylesheet" href="/assets/css/barra_busqueda.css">
+        <link rel="stylesheet" href="/assets/css/modal.css" />
+        <link rel="stylesheet" href="/assets/css/barra_busqueda.css" />
     </head>
+
     <body>
-        <div class="barra">
-            <form action="/search" method="get">
-              <input type="text" name="query" placeholder="Search tasks...">
+        <div class="container">
+            <h1>Lista de Tareas</h1>
+
+            <form id="tareaForm">
+                <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required />
+                <button type="submit">Agregar</button>
             </form>
-            <div>
-                <button type="button" class="new-task-button">+ New Task</button>
-            </div>
+
+            <ul id="listaTareas"></ul>
+        </div>
         <!-- aca hice el filtro -->
         <div class="filtros">
             <div>
@@ -30,6 +35,66 @@
                 <button class="btnLow" id="low"></button><span> low</span>
             </div>
         </div>
+        <!-- Modales -->
+        <div class="background-modal">
+            <div class="modal-container">
+                <div class="hearder-container">
+                    <h3>Crear nueva tarea</h3>
+                    <p>Rellena los detalles de tu nueva tarea</p>
+                    <span>&times;</span>
+                </div>
+
+                <div>
+                    <label class="modalLabels" for="inputTaskName">Titulo</label>
+                    <input class="nameTaskInput" type="text" placeholder="Nombre de la tarea" />
+                </div>
+
+                <div class="limit-container">
+                    <div>
+                        <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
+                        <input type="date" id="dueDate" name="dueDate" />
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="dueTime">Hora límite</label>
+                        <input type="time" name="horaVencimiento" id="dueTime" value="14:30" />
+                    </div>
+                </div>
+
+                <div class="description-container">
+                    <label class="modalLabels" for="descriptionTask">Descripcion</label>
+                    <textarea name="descriptionTask" id="descriptionTask"></textarea>
+                </div>
+                <div class="optionsTaks-container">
+                    <div>
+                        <label class="modalLabels" for="categoriesTask">Selecciona una categoría:</label>
+                        <select id="categoriesTask" name="categorias">
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="diseno">Diseño</option>
+                            <option value="desarrollo">Desarrollo</option>
+                            <option value="revision">Revisión</option>
+                            <option value="documentacion">Documentación</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="priorityTask">Selecciona la prioridad:</label>
+                        <select id="priorityTask" name="priorityTask">
+                            <option value="" disabled selected>-- Seleccione prioridad --</option>
+                            <div>
+                                <option value="high">Alta prioridad</option>
+                            </div>
+
+                            <option value="media">Media prioridad</option>
+                            <option value="low">Baja prioridad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container-buttons">
+                    <button class="negativeButton">Cancelar</button>
+                    <button class="positiveButton">Crear Tarea</button>
+                </div>
+            </div>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
