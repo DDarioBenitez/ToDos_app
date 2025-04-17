@@ -11,90 +11,114 @@
     </head>
 
     <body>
-        <div class="container">
-            <h1>Lista de Tareas</h1>
+        <main id="dashboard-main">
+            <div class="container">
+                <h1>Lista de Tareas</h1>
 
-            <form id="tareaForm">
-                <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required />
-                <button type="submit">Agregar</button>
-            </form>
+                <form id="tareaForm">
+                    <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required />
+                    <button type="submit">Agregar</button>
+                </form>
 
-            <ul id="listaTareas"></ul>
-        </div>
-        <!-- aca hice el filtro -->
-        <div class="filtros">
-            <div>
-                <h4>Filtros</h4>
-                <h5><span>diseño</span></h5>
-                <button class="btnDesarrollo" id="desarrollo"></button><span> desarrollo</span><br />
-                <button class="btnResearch" id="research"></button><span> research</span><br />
-                <button class="btnDocumentaciones" id="documentaciones"></button><span> documentaciones</span><br /><br />
-                <h5><span>Prioridad</span></h5>
-                <button class="btnHigh" id="high"></button><span> high</span><br />
-                <button class="btnMedium" id="medium"></button><span> medium</span><br />
-                <button class="btnLow" id="low"></button><span> low</span>
+                <ul id="listaTareas"></ul>
             </div>
-        </div>
-        <!-- Modales -->
-        <div class="background-modal">
-            <div class="modal-container">
-                <div class="hearder-container">
-                    <h3>Crear nueva tarea</h3>
-                    <p>Rellena los detalles de tu nueva tarea</p>
-                    <span>&times;</span>
-                </div>
+            <!-- aca hice el filtro -->
+            <div class="filtros">
+                <div class="filtros-container">
+                    <h4>Filtros</h4>
+                    <ul class="filtros-lista">
+                        <li class="li-filtros">
+                            <input type="checkbox" id="desarrollo-inp" name="desarrollo" value="desarrollo" />
+                            <label for="desarrollo-inp">desarrollo</label>
+                        </li>
+                        <li class="li-filtros">
+                            <input type="checkbox" id="research-inp" name="research" value="research" />
+                            <label for="research-inp">research</label>
+                        </li>
+                        <li class="li-filtros">
+                            <input type="checkbox" id="documentaciones-inp" name="documentaciones" value="documentaciones" />
+                            <label for="documentaciones-inp">documentaciones</label>
+                        </li>
+                    </ul>
+                    <h4><span>Prioridad</span></h4>
 
-                <div>
-                    <label class="modalLabels" for="inputTaskName">Titulo</label>
-                    <input class="nameTaskInput" type="text" placeholder="Nombre de la tarea" />
-                </div>
-
-                <div class="limit-container">
-                    <div>
-                        <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
-                        <input type="date" id="dueDate" name="dueDate" />
-                    </div>
-                    <div>
-                        <label class="modalLabels" for="dueTime">Hora límite</label>
-                        <input type="time" name="horaVencimiento" id="dueTime" value="14:30" />
-                    </div>
-                </div>
-
-                <div class="description-container">
-                    <label class="modalLabels" for="descriptionTask">Descripcion</label>
-                    <textarea name="descriptionTask" id="descriptionTask"></textarea>
-                </div>
-                <div class="optionsTaks-container">
-                    <div>
-                        <label class="modalLabels" for="categoriesTask">Selecciona una categoría:</label>
-                        <select id="categoriesTask" name="categorias">
-                            <option value="" disabled selected>-- Seleccione --</option>
-                            <option value="diseno">Diseño</option>
-                            <option value="desarrollo">Desarrollo</option>
-                            <option value="revision">Revisión</option>
-                            <option value="documentacion">Documentación</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="modalLabels" for="priorityTask">Selecciona la prioridad:</label>
-                        <select id="priorityTask" name="priorityTask">
-                            <option value="" disabled selected>-- Seleccione prioridad --</option>
-                            <div>
-                                <option value="high">Alta prioridad</option>
-                            </div>
-
-                            <option value="media">Media prioridad</option>
-                            <option value="low">Baja prioridad</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="container-buttons">
-                    <button class="negativeButton">Cancelar</button>
-                    <button class="positiveButton">Crear Tarea</button>
+                    <ul class="prioridades-lista">
+                        <li class="li-prioridades">
+                            <input type="checkbox" id="high-inp" name="high" value="high" />
+                            <label for="high-inp">Alta</label>
+                        </li>
+                        <li class="li-prioridades">
+                            <input type="checkbox" id="medium-inp" name="medium" value="researchmedium" />
+                            <label for="research-inp">Media</label>
+                        </li>
+                        <li class="li-prioridades">
+                            <input type="checkbox" id="low-inp" name="low" value="low" />
+                            <label for="documentaciones-inp">Baja</label>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
+            <!-- Modales -->
+            <div class="background-modal">
+                <div class="modal-container">
+                    <div class="hearder-container">
+                        <h3>Crear nueva tarea</h3>
+                        <p>Rellena los detalles de tu nueva tarea</p>
+                        <span>&times;</span>
+                    </div>
 
-        <script src="script.js"></script>
+                    <div>
+                        <label class="modalLabels" for="inputTaskName">Titulo</label>
+                        <input class="nameTaskInput" type="text" placeholder="Nombre de la tarea" />
+                    </div>
+
+                    <div class="limit-container">
+                        <div>
+                            <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
+                            <input type="date" id="dueDate" name="dueDate" />
+                        </div>
+                        <div>
+                            <label class="modalLabels" for="dueTime">Hora límite</label>
+                            <input type="time" name="horaVencimiento" id="dueTime" value="14:30" />
+                        </div>
+                    </div>
+
+                    <div class="description-container">
+                        <label class="modalLabels" for="descriptionTask">Descripcion</label>
+                        <textarea name="descriptionTask" id="descriptionTask"></textarea>
+                    </div>
+                    <div class="optionsTaks-container">
+                        <div>
+                            <label class="modalLabels" for="categoriesTask">Selecciona una categoría:</label>
+                            <select id="categoriesTask" name="categorias">
+                                <option value="" disabled selected>-- Seleccione --</option>
+                                <option value="diseno">Diseño</option>
+                                <option value="desarrollo">Desarrollo</option>
+                                <option value="revision">Revisión</option>
+                                <option value="documentacion">Documentación</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="modalLabels" for="priorityTask">Selecciona la prioridad:</label>
+                            <select id="priorityTask" name="priorityTask">
+                                <option value="" disabled selected>-- Seleccione prioridad --</option>
+                                <div>
+                                    <option value="high">Alta prioridad</option>
+                                </div>
+
+                                <option value="media">Media prioridad</option>
+                                <option value="low">Baja prioridad</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="container-buttons">
+                        <button class="negativeButton">Cancelar</button>
+                        <button class="positiveButton">Crear Tarea</button>
+                    </div>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+        </main>
     </body>
 </html>
