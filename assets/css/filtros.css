@@ -1,54 +1,84 @@
 /* aca esta mi css lucas */
-
+@import url("./style.css");
+#dashboard-main {
+    display: flex;
+    flex-direction: row-reverse;
+}
 .filtros {
     display: flex;
     justify-content: left;
+    border-right: 1px solid black;
+    width: 15rem;
+    padding: 1rem;
+    margin: 0.5rem;
 }
-.btnDesarrollo {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
-    cursor: pointer;
+
+.filtros-lista{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
-.btnResearch {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
+.li-filtros{
     cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
 }
-.btnDocumentaciones {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
+.li-filtros input[type="checkbox"]{
+    position: relative;
+    appearance: none;
     cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+    border-radius: 30%;
 }
-.btnHigh {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
-    cursor: pointer;
+.li-filtros input[type="checkbox"]::after{
+    content: "✔";
+    position: absolute;
+    top: -13px;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    display: none;;
 }
-.btnMedium {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
-    cursor: pointer;
+.li-filtros input[type="checkbox"]:checked::after{
+    display: block;
 }
-.btnLow {
-    background-color: white;
-    border: 1px solid black;
-    color: white;
-    padding: 5px 5px;
-    border-radius: 3px;
+
+/* css de prioridad */
+
+.prioridades-lista{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.li-prioridades{
     cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+}
+.li-prioridades input[type="checkbox"]{
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    width: 1rem;
+    height: 1rem;
+    margin: 0.5rem;
+    background-color: transparent;
+    border: 1px solid var(--color-accent);
+    border-radius: 30%;
+}
+.li-prioridades input[type="checkbox"]::after{
+    content: "✔";
+    position: absolute;
+    top: -13px;
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    display: none;;
+}
+.li-prioridades input[type="checkbox"]:checked::after{
+    display: block;
 }
