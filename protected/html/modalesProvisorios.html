@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Tareas</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/filtros.css" />
+    <link rel="stylesheet" href="/assets/css/modal.css">
+</head>
+
+<body>
+    <!-- modales -->
+    <div class="background-modal">
+        <div class="modal-addTask-container">
+            <div class="modal-container">
+                <div class="hearder-container">
+                    <h3>Crear nueva tarea</h3>
+                    <p>Rellena los detalles de tu nueva tarea </p>
+                    <span>&times;</span>
+
+                </div>
+
+                <div>
+                    <label class="modalLabels" for="inputTaskName">Titulo</label>
+                    <input class="nameTaskInput" type="text" placeholder="Nombre de la tarea">
+                </div>
+
+                <div class="limit-container">
+                    <div>
+                        <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
+                        <input type="date" id="dueDate" name="dueDate">
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="dueTime">Hora límite</label>
+                        <input type="time" name="horaVencimiento" id="dueTime" value="14:30">
+                    </div>
+                </div>
+
+                <div class="description-container">
+                    <label class="modalLabels" for="descriptionTask">Descripcion</label>
+                    <textarea name="descriptionTask" id="descriptionTask"></textarea>
+                </div>
+                <div class="optionsTaks-container">
+                    <div>
+                        <label class="modalLabels" for="categoriesTask">Selecciona una categoría:</label>
+                        <select id="categoriesTask" name="categorias">
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="diseno">Diseño</option>
+                            <option value="desarrollo">Desarrollo</option>
+                            <option value="revision">Revisión</option>
+                            <option value="documentacion">Documentación</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="priorityTask">Selecciona la prioridad:</label>
+                        <select id="priorityTask" name="priorityTask">
+                            <option value="" disabled selected>-- Seleccione prioridad --</option>
+                            <div>
+                                <option value="high">Alta prioridad</option>
+                            </div>
+
+                            <option value="media">Media prioridad</option>
+                            <option value="low">Baja prioridad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container-buttons">
+                    <button class="negativeButton">Cancelar</button>
+                    <button class="positiveButton">Crear Tarea</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Moda para editar la tarea -->
+
+        <div class="modal-editTask-container">
+            <div class="modal-container">
+                <div class="hearder-container">
+                    <h3>Editar tarea</h3>
+                    <p></p>
+                    <span>&times;</span>
+
+                </div>
+
+                <div>
+                    <label class="modalLabels" for="inputTaskName">Titulo</label>
+                    <input class="nameTaskInput" type="text" placeholder="Nuevo nombre de la tarea">
+                </div>
+
+                <div class="limit-container">
+                    <div>
+                        <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
+                        <input type="date" id="dueDate" name="dueDate">
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="dueTime">Hora límite</label>
+                        <input type="time" name="horaVencimiento" id="dueTime" value="14:30">
+                    </div>
+                </div>
+
+                <div class="description-container">
+                    <label class="modalLabels" for="descriptionTask">Descripcion</label>
+                    <textarea name="descriptionTask" id="descriptionTask"></textarea>
+                </div>
+                <div class="optionsTaks-container">
+                    <div>
+                        <label class="modalLabels" for="categoriesTask">Selecciona una categoría:</label>
+                        <select id="categoriesTask" name="categorias">
+                            <option value="" disabled selected>-- Seleccione --</option>
+                            <option value="diseno">Diseño</option>
+                            <option value="desarrollo">Desarrollo</option>
+                            <option value="revision">Revisión</option>
+                            <option value="documentacion">Documentación</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="priorityTask">Selecciona la prioridad:</label>
+                        <select id="priorityTask" name="priorityTask">
+                            <option value="" disabled selected>-- Seleccione prioridad --</option>
+                            <div>
+                                <option value="high">Alta prioridad</option>
+                            </div>
+
+                            <option value="media">Media prioridad</option>
+                            <option value="low">Baja prioridad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="container-buttons">
+                    <button class="negativeButton">Cancelar</button>
+                    <button class="positiveButton"><svg class="save-icon" version="1.1" id="Layer_2"
+                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
+                            y="0px" width="100px" height="100px" viewBox="-249 151 100 100"
+                            style="enable-background:new -249 151 100 100;" xml:space="preserve">
+                            <g>
+                                <path fill="currentColor"
+                                    d="M-157.8,171.6c-0.2-0.5-0.4-1.1-1-1.7l-15.8-14.5c-0.7-0.7-1.5-1-2.4-1h-7.5h-41.1h-11c-1.9,0-3.5,1.6-3.5,3.5V245
+                           c0,1.4,1.1,2.5,2.5,2.5h10.1h54.8h11.6c1.9,0,3.5-1.6,3.5-3.5v-72L-157.8,171.6z M-189.6,159.4v10.4h-31.1v-10.4H-189.6z
+                            M-222.6,242.5v-30.6h44.8v30.6H-222.6z M-162.7,242.5h-10.1v-33.1c0-1.4-1.1-2.5-2.5-2.5h-49.8c-1.4,0-2.5,1.1-2.5,2.5v33.1h-7.6
+                           v-83.1h9.5v12.9c0,1.4,1.1,2.5,2.5,2.5h36.1c1.4,0,2.5-1.1,2.5-2.5v-12.9h6.9l15,13.8V242.5z" />
+                                <path fill="currentColor" d="M-212.1,221.1h23.8c1.4,0,2.5-1.1,2.5-2.5l0,0c0-1.4-1.1-2.5-2.5-2.5h-23.8c-1.4,0-2.5,1.1-2.5,2.5l0,0
+                           C-214.6,220-213.5,221.1-212.1,221.1z" />
+                                <path fill="currentColor" d="M-212.1,230.1h23.8c1.4,0,2.5-1.1,2.5-2.5l0,0c0-1.4-1.1-2.5-2.5-2.5h-23.8c-1.4,0-2.5,1.1-2.5,2.5l0,0
+                           C-214.6,229-213.5,230.1-212.1,230.1z" />
+                                <path fill="currentColor" d="M-212.1,239.1h23.8c1.4,0,2.5-1.1,2.5-2.5l0,0c0-1.4-1.1-2.5-2.5-2.5h-23.8c-1.4,0-2.5,1.1-2.5,2.5l0,0
+                           C-214.6,238-213.5,239.1-212.1,239.1z" />
+                            </g>
+                        </svg>
+                        Guardar</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Modal de detalles de la tarea -->
+
+        <div class="modal-datailsTask-container">
+            <div class="modal-container">
+                <div class="hearder-container">
+                    <h3>Detalles de la Tarea</h3>
+                    <span class="editarDetailsTask"><svg class="penciIcon" fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" 	 viewBox="0 0 306.637 306.637" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M12.809,238.52L0,306.637l68.118-12.809l184.277-184.277l-55.309-55.309L12.809,238.52z M60.79,279.943l-41.992,7.896
+                                    l7.896-41.992L197.086,75.455l34.096,34.096L60.79,279.943z"/>
+                                <path d="M251.329,0l-41.507,41.507l55.308,55.308l41.507-41.507L251.329,0z M231.035,41.507l20.294-20.294l34.095,34.095
+                                    L265.13,75.602L231.035,41.507z"/></g>
+                        </svg> Editar</span>
+                    <span class="closeDetailsTask">&times;</span>
+
+                </div>
+
+                <div>
+                    <label class="modalLabels" for="inputTaskName">Titulo</label>
+                    <p class="nameTaskDesatails">Investigacion de Competitividad</p>
+                </div>
+
+                <div class="limit-container">
+                    <div>
+                        <label class="modalLabels" for="dueDate">Fecha de vencimiento</label>
+                        <p class="dueDateTaskDetails">19 de Abril, 2025</p>
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="dueTime">Hora límite</label>
+                        <p class="duaTimeTaskDetails">9:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="description-container">
+                    <label class="modalLabels" for="descriptionTask">Descripcion</label>
+                    <p class="descriptionTaskDetails">No hay descripcion disponible</p>
+                </div>
+                <div class="optionsTaks-container">
+                    <div>
+                        <label class="modalLabels" for="categoriesTask">Categoria</label>
+                        <div  class="categoryTaskDetails-container">
+                            <p class="categoryTaskDetails">Investigacion</p>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="modalLabels" for="priorityTask">Prioridad</label>
+                        <div class="priorityTaskDetails-container">
+                            <p class="priorityTaskDetails">Baja</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-buttons">
+                    <button class="positiveButton">Cerrar</button>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
