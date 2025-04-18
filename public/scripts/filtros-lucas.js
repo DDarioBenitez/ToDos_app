@@ -57,8 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
         // Crear un ejemplo de tarea con datos ficticios
         const nuevaTarea = document.createElement("li");
         nuevaTarea.textContent = nuevaTareaTexto;
-        nuevaTarea.dataset.categoria = "desarrollo"; // Cambiar según sea necesario
-        nuevaTarea.dataset.prioridad = "high"; // Cambiar según sea necesario
+        nuevaTarea.dataset.categoria = "Pendiente"; // Cambiar según sea necesario
+        nuevaTarea.dataset.prioridad = "Alta"; // Cambiar según sea necesario
 
         listaTareas.appendChild(nuevaTarea);
         nuevaTareaInput.value = "";

@@ -8,9 +8,10 @@
         <link rel="stylesheet" href="/assets/css/filtros.css" />
         <link rel="stylesheet" href="/assets/css/modal.css" />
         <link rel="stylesheet" href="/assets/css/barra_busqueda.css" />
+
     </head>
 
-    <body>
+    <body >
         <main id="dashboard-main">
             <div class="container">
                 <h1>Lista de Tareas</h1>
@@ -25,19 +26,20 @@
             <!-- aca hice el filtro -->
             <div class="filtros">
                 <div class="filtros-container">
-                    <h4>Filtros</h4>
+                    <h3>Filtros</h3><br>
+                    <h4>Categorias</h4>
                     <ul class="filtros-lista">
                         <li class="li-filtros">
-                            <input type="checkbox" id="desarrollo-inp" name="desarrollo" value="desarrollo" />
-                            <label for="desarrollo-inp">desarrollo</label>
+                            <input type="checkbox" id="pendiente-inp" name="pendiente" value="pendiente" />
+                            <label for="pendiente-inp">Pendientes</label>
                         </li>
                         <li class="li-filtros">
-                            <input type="checkbox" id="research-inp" name="research" value="research" />
-                            <label for="research-inp">research</label>
+                            <input type="checkbox" id="progreso-inp" name="progreso" value="progreso" />
+                            <label for="progreso-inp">En progreso</label>
                         </li>
                         <li class="li-filtros">
-                            <input type="checkbox" id="documentaciones-inp" name="documentaciones" value="documentaciones" />
-                            <label for="documentaciones-inp">documentaciones</label>
+                            <input type="checkbox" id="completada-inp" name="completada" value="completada" />
+                            <label for="completada-inp">Completadas</label>
                         </li>
                     </ul>
                     <h4><span>Prioridad</span></h4>
@@ -56,6 +58,9 @@
                             <label for="documentaciones-inp">Baja</label>
                         </li>
                     </ul>
+                </div>
+                <div class="btnLimpiar-container">
+                    <button class="btnLimpiar"><h4>Limpiar filtros</h4></button>
                 </div>
             </div>
             <!-- Modales -->
