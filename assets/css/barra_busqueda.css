@@ -9,19 +9,19 @@
 }
 
 .barra form {
+    position: relative;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .barra input[type="text"] {
     appearance: none;
     outline: none;
-    padding: 10px 15px;
+    padding: 10px 15px 10px 40px;
     font-size: 16px;
     border: 1px solid rgba(0, 0, 0, 0.3);
     border-radius: 6px;
     width: 300px;
-    margin-right: 10px;
     background-color: transparent;
     color: #614228;
 }
@@ -42,4 +42,21 @@
 
 .new-task-button:hover {
     background-color: #ff6b35;
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.lupa-icon {
+    width: 20px;
+    height: 20px;
+    color: #e26e34;
+    fill: currentColor;
 }
