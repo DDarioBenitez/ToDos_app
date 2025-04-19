@@ -4,6 +4,9 @@ body {
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -11,6 +14,11 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px 0;
+}
+.tareas {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 /* Header */
