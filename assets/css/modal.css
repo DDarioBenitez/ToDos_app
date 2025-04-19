@@ -1,7 +1,7 @@
 @import url(./style.css);
 
 .background-modal {
-  /* display: none; */
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,13 +12,17 @@
   height: 100vw;
 }
 
-/* Displays conetenedore de cada Modal */
+/* Displays conetenedore de cada Modal !!!!!!!!!!!!!!!!! */
 
 .modal-addTask-container {
   display: none;
 }
 
 .modal-editTask-container {
+  display: none;
+}
+
+.modal-datailsTask-container {
   display: none;
 }
 
@@ -83,6 +87,7 @@ span:hover {
   margin: 0 auto 0.7rem;
   border-color: rgba(0, 0, 0, 0.3);
   font-size: 1rem;
+  background-color: transparent;
 }
 .nameTaskInput:focus {
   border-color: var(--color-primary);
@@ -104,6 +109,7 @@ span:hover {
   appearance: none;
   outline: none;
   border-color: rgba(0, 0, 0, 0.3);
+  background-color: transparent;
 }
 .limit-container div input:focus {
   border-color: var(--color-primary);
@@ -128,6 +134,8 @@ span:hover {
   min-width: 100%;
   overflow: auto;
   border-radius: 1%;
+  background-color: transparent;
+  padding: .4rem;
 }
 
 .description-container textarea:focus {
@@ -154,6 +162,7 @@ span:hover {
   border-color: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   box-sizing: border-box;
+  background-color: transparent;
 }
 
 .optionsTaks-container select:focus {
@@ -211,7 +220,8 @@ span:hover {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
 }
 
-/* Estilos para modal de ver detalles */
+/* Estilos para modal de ver detalles !!!!!!!!!!!!!!!!!!!!! */
+
 .nameTaskDesatails {
   font-size: 1.4rem;
   font-weight: bold;
@@ -231,7 +241,6 @@ span:hover {
 
 .categoryTaskDetails,
 .priorityTaskDetails {
-  
   font-weight: 600;
   border: 2px solid;
   display: inline-block;
@@ -245,27 +254,27 @@ span:hover {
 }
 
 .hearder-container .closeDetailsTask {
-  top: -5px; 
+  top: -5px;
 }
 
-.hearder-container .editarDetailsTask{
+.hearder-container .editarDetailsTask {
   right: 1.8rem;
   font-size: 1rem;
   background-color: var(---color-text-light);
-  display:inline-block;
+  display: inline-block;
   width: 5rem;
   /* padding: ; */
   border-radius: 10px;
   cursor: pointer;
 }
 
-.hearder-container .editarDetailsTask:hover{
+.hearder-container .editarDetailsTask:hover {
   background-color: var(--color-primary);
 }
 
-.penciIcon{
-  width: .8rem;
-  height: .8rem;
+.penciIcon {
+  width: 0.8rem;
+  height: 0.8rem;
   display: inline;
 }
 
