@@ -8,25 +8,21 @@
         <link rel="stylesheet" href="/assets/css/filtros.css" />
         <link rel="stylesheet" href="/assets/css/modal.css" />
         <link rel="stylesheet" href="/assets/css/barra_busqueda.css" />
-
     </head>
 
-    <body >
+    <body>
         <main id="dashboard-main">
-            <div class="container">
-                <h1>Lista de Tareas</h1>
-
-                <form id="tareaForm">
-                    <input type="text" id="nuevaTarea" placeholder="Nueva tarea..." required />
-                    <button type="submit">Agregar</button>
+            <header class="barra">
+                <form action="/search" method="get">
+                    <input type="text" name="query" placeholder="Search tasks..." />
                 </form>
-
-                <ul id="listaTareas"></ul>
-            </div>
+                <button type="button" class="new-task-button">+ New Task</button>
+            </header>
             <!-- aca hice el filtro -->
             <div class="filtros">
                 <div class="filtros-container">
-                    <h3>Filtros</h3><br>
+                    <h3>Filtros</h3>
+                    <br />
                     <h4>Categorias</h4>
                     <ul class="filtros-lista">
                         <li class="li-filtros">
