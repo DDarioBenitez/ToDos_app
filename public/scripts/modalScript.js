@@ -115,3 +115,7 @@ modals.add.closeButtons.forEach((btn) => {
   if (btn) btn.addEventListener("click", () => closeModal("add"));
 });
 
+// Capturar los datos al poner Editar tarea
+
+// Creacion del objeto tarea 
+
