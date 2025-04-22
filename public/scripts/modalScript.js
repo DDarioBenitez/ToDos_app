@@ -1,4 +1,3 @@
-console.log("Funca");
 
 /* Definicion de elementos a usar */
 

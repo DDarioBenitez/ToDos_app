@@ -26,15 +26,15 @@
                 <h4>Categorias</h4>
                 <ul class="filtros-lista">
                     <li class="li-filtros">
-                        <input type="checkbox" id="pendiente-inp" name="pendiente" value="pendiente" />
+                        <input type="checkbox" class="cat-inp" id="pendiente-inp" name="pendiente" value="pendiente" />
                         <label for="pendiente-inp">Pendientes</label>
                     </li>
                     <li class="li-filtros">
-                        <input type="checkbox" id="progreso-inp" name="progreso" value="progreso" />
+                        <input type="checkbox" class="cat-inp" id="progreso-inp" name="progreso" value="progreso" />
                         <label for="progreso-inp">En progreso</label>
                     </li>
                     <li class="li-filtros">
-                        <input type="checkbox" id="completada-inp" name="completada" value="completada" />
+                        <input type="checkbox" class="cat-inp" id="completada-inp" name="completada" value="completada" />
                         <label for="completada-inp">Completadas</label>
                     </li>
                 </ul>
@@ -42,21 +42,21 @@
 
                 <ul class="prioridades-lista">
                     <li class="li-prioridades">
-                        <input type="checkbox" id="high-inp" name="high" value="high" />
+                        <input type="checkbox"  class="prio-inp" id="high-inp" name="high" value="high" />
                         <label for="high-inp">Alta</label>
                     </li>
                     <li class="li-prioridades">
-                        <input type="checkbox" id="medium-inp" name="medium" value="researchmedium" />
-                        <label for="research-inp">Media</label>
+                        <input type="checkbox" class="prio-inp" id="medium-inp" name="medium" value="researchmedium" />
+                        <label for="medium-inp">Media</label>
                     </li>
                     <li class="li-prioridades">
-                        <input type="checkbox" id="low-inp" name="low" value="low" />
-                        <label for="documentaciones-inp">Baja</label>
+                        <input type="checkbox" class="prio-inp" id="low-inp" name="low" value="low" />
+                        <label for="low-inp">Baja</label>
                     </li>
                 </ul>
             </div>
             <div class="btnLimpiar-container">
-                <button class="btnLimpiar">
+                <button id="btnClean" class="btnLimpiar">
                     <h4>Limpiar filtros</h4>
                 </button>
             </div>
@@ -359,8 +359,8 @@
 
     </div>
 
-
-    <script src="script.js"></script>
+    <script src="/public/scripts/limpiar-Dom-lucas.js"></script>
+    <script src="/public/scripts/script.js"></script>
     <script src="/public/scripts/modalScript.js"></script>
 </body>
 
