@@ -20,43 +20,42 @@
         </header> -->
     <main id="dashboard-main">
         <!-- aca hice el filtro -->
-        <div class="filtros">
-            <div class="filtros-container">
-                <h3 class="filtros-title">Filtros</h3>
+        <div class="filters">
+            <div class="filters-container">
+                <h3 class="filters-title">Filtros</h3>
                 <h4>Categorias</h4>
-                <ul class="filtros-lista">
-                    <li class="li-filtros">
+                <ul class="filters-lista">
+                    <li class="li-filters">
                         <input type="checkbox" class="cat-inp" id="pendiente-inp" name="pendiente" value="pendiente" />
                         <label for="pendiente-inp">Pendientes</label>
                     </li>
-                    <li class="li-filtros">
+                    <li class="li-filters">
                         <input type="checkbox" class="cat-inp" id="progreso-inp" name="progreso" value="progreso" />
                         <label for="progreso-inp">En progreso</label>
                     </li>
-                    <li class="li-filtros">
-                        <input type="checkbox" class="cat-inp" id="completada-inp" name="completada"
-                            value="completada" />
+                    <li class="li-filters">
+                        <input type="checkbox" class="cat-inp" id="completada-inp" name="completada" value="completada" />
                         <label for="completada-inp">Completadas</label>
                     </li>
                 </ul>
-                <h4><span>Prioridad</span></h4>
+                <h4>Prioridad</h4>
 
-                <ul class="prioridades-lista">
-                    <li class="li-prioridades">
-                        <input type="checkbox" class="prio-inp" id="high-inp" name="high" value="high" />
+                <ul class="priority-list">
+                    <li class="li-priority">
+                        <input type="checkbox"  class="prio-inp" id="high-inp" name="high" value="high" />
                         <label for="high-inp">Alta</label>
                     </li>
-                    <li class="li-prioridades">
+                    <li class="li-priority">
                         <input type="checkbox" class="prio-inp" id="medium-inp" name="medium" value="researchmedium" />
                         <label for="medium-inp">Media</label>
                     </li>
-                    <li class="li-prioridades">
+                    <li class="li-priority">
                         <input type="checkbox" class="prio-inp" id="low-inp" name="low" value="low" />
                         <label for="low-inp">Baja</label>
                     </li>
                 </ul>
             </div>
-            <div class="btnLimpiar-container">
+            <div class="btnClean-container">
                 <button id="btnClean" class="btnLimpiar">
                     <h4>Limpiar filtros</h4>
                 </button>
@@ -365,9 +364,11 @@
 
     </div>
 
+    
     <script src="/public/scripts/modalScript.js"></script>
-
-
+    <script src="/public/scripts/limpiar-Dom-lucas.js"></script>
+    <script src="/public/scripts/script.js"></script>
+   
 </body>
 
 </html>
