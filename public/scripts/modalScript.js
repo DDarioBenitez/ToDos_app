@@ -1,5 +1,3 @@
-console.log("Funca");
-
 /* Definicion de elementos a usar */
 
 const modalsContainer = document.getElementById("modals-container");
@@ -33,6 +31,7 @@ const modals = {
     active: false,
   },
 };
+
 const allCloseButtons = modals.add.closeButtons.concat(
   modals.edit.closeButtons,
   modals.details.closeButtons
@@ -65,7 +64,8 @@ if (modals.edit.openButton) {
 if (modals.details.openButton) {
   modals.details.openButton.addEventListener("click", () =>
     openModal("details")
-  );}
+  );
+}
 
 editTaskButton.addEventListener("click", () => openModal("edit"));
 
@@ -117,5 +117,37 @@ modals.add.closeButtons.forEach((btn) => {
 
 // Capturar los datos al poner Editar tarea
 
-// Creacion del objeto tarea 
+const task = {
+  title: null,
+  dueDate: null,
+  dueTime: null,
+  description: null,
+  category: null,
+  priority: null,
+};
 
+const title = document.getElementById("titleCreateTask-inp");
+const dueDate = document.getElementById("dueDate");
+const dueTime = document.getElementById("dueTime");
+const description = document.getElementById("descriptionTask");
+const category = document.getElementById("categoriesTask");
+const priority = document.getElementById("priorityTask");
+
+const createTaskButton = document.getElementById("createTaskButton");
+
+createTaskButton.addEventListener("click", function () {
+  task.title = title.value;
+  title.value = "";
+
+  task.dueDate = dueDate.value;
+  task.dueTime = dueTime.value;
+  task.description = description.value;
+  task.category = category.value;
+  task.priority = priority.value;
+  for (let element in task) {
+    console.log(element + ":  " + task[element]);
+    task[element].value = "";
+  }
+});
+
+// Creacion del objeto tarea
