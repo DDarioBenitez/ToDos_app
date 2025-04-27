@@ -8,10 +8,10 @@ const dellListaCheckbox = document.getElementsByClassName("cat-inp"); // Selecci
 const dellPrioCheckbox = document.getElementsByClassName("prio-inp"); // Selecciona el checkbox de eliminar
 
 console.log(dellListaCheckbox[2].checked); // Verifica si es un array
+
+
 const auxPrio = Array.from(dellPrioCheckbox)
 console.log(Array.isArray(auxPrio)); // Verifica si es un array
-
-
 const aux = Array.from(dellListaCheckbox)
 console.log(Array.isArray(aux)); // Verifica si es un array
 
@@ -33,9 +33,6 @@ auxPrio.forEach(checkbox => {
     
     });
 
-
-
-
 aux.forEach(checkbox => {
     checkbox.addEventListener("change", (event) => {
         const checkSelect = event.target.checked; // Verifica si el checkbox está seleccionado toma true o false
@@ -54,13 +51,6 @@ aux.forEach(checkbox => {
     });
     
 });
-
-
-
-
-
-
-
 
 //capturar lo que esta checkeado 
 console.log(typeof dellPrioCheckbox);
@@ -83,14 +73,10 @@ for (const checkbox of dellPrioCheckbox) {
 
 
 
-
-
-
 // const allCheckbox = dellListaCheckbox.concat(dellPrioCheckbox)
  // Selecciona los checkboxes de la sección de filtros
 // const tareas = document.querySelectorAll("li"); // Selecciona todas las tareas
 // console.log(allCheckbox);
-
 
 
 // const limpieza =  document.addEventListener("click", () => {
@@ -99,11 +85,6 @@ for (const checkbox of dellPrioCheckbox) {
 //     }); 
     
 // });
-
-
-
-
-
 
 
 // const checkboxes = document.querySelectorAll(".filtros-container input[type='checkbox']");
@@ -135,3 +116,55 @@ for (const checkbox of dellPrioCheckbox) {
 //           }
 //       });
 //   });
+
+//cuando trabajas con un objeto se trabaja con function despues del objeto y para trabajar con las clases si se puede trabajar sin ponerle function
+    tareas = [
+        { id: 1, nombre: "Tarea 1", categoria: "Pendientes", prioridad: "Alta" },
+        { id: 2, nombre: "Tarea 2", categoria: "En progreso", prioridad: "Media" },
+        { id: 3, nombre: "Tarea 3", categoria: "Completadas", prioridad: "Baja" },
+    ]
+    
+    function filtrarPorCategoria(categoria) {
+        return tareas.filter(tarea => tarea.categoria === categoria);
+    }
+    function filtrarPorPrioridad(prioridad) {
+        return tareas.filter(tarea => tarea.prioridad === prioridad);
+    }
+    function filtrarPorCategoriaYPrioridad(categoria, prioridad) {
+        return tareas.filter(tarea => tarea.categoria === categoria && tarea.prioridad === prioridad);
+    }
+    function filtrarPorNombre(nombre) {
+        return tareas.filter(tarea => tarea.nombre.toLowerCase().includes(nombre.toLowerCase()));
+    }
+    function filtrarPorNombreYcategoriaYprioridad(nombre, categoria, prioridad) {
+        return tareas.filter(tarea => tarea.nombre.toLowerCase().includes(nombre.toLowerCase()) && tarea.categoria === categoria && tarea.prioridad === prioridad);
+    }
+
+
+console.log(filtrarPorNombre("tarea 2" )); // Filtra por categoría "Trabajo"
+
+// yo habia hecho asi para trabajar con las clases
+
+// function tareas = {
+//     tareas: [
+//         { id: 1, nombre: "Tarea 1", categoria: "Pendientes", prioridad: "Alta" },
+//         { id: 2, nombre: "Tarea 2", categoria: "En progreso", prioridad: "Media" },
+//         { id: 3, nombre: "Tarea 3", categoria: "Completadas", prioridad: "Baja" },
+//     ],
+//     filtrarPorCategoria(categoria) {
+//         return this.tareas.filter(tarea => tarea.categoria === categoria);
+//     },
+//     filtrarPorNombre(nombre) {
+//         return this.tareas.filter(tarea => tarea.nombre.toLowerCase().includes(nombre.toLowerCase())); 
+//     },
+//     filtrarPorPrioridad(prioridad) {
+//         return this.tareas.filter(tarea => tarea.prioridad === prioridad);
+//     },
+//     filtrarPorCategoriaYPrioridad(categoria, prioridad) {
+//         return this.tareas.filter(tarea => tarea.categoria === categoria && tarea.prioridad === prioridad);
+//     },
+//     filtrarPorCategoriaYnombreYprioridad(categoria, nombre, prioridad){
+//         return this.tareas.filter(tarea => tarea.categoria === categoria && tarea.nombre.toLowerCase().includes(nombre.toLowerCase()) && tarea.prioridad === prioridad);
+//     }
+// };
+
