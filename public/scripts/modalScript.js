@@ -126,6 +126,7 @@ const task = {
   priority: null,
 };
 
+// Creacion del objeto tarea
 const title = document.getElementById("titleCreateTask-inp");
 const dueDate = document.getElementById("dueDate");
 const dueTime = document.getElementById("dueTime");
@@ -135,10 +136,48 @@ const priority = document.getElementById("priorityTask");
 
 const createTaskButton = document.getElementById("createTaskButton");
 
+const inputsTask = new Object();
+inputsTask.add = {
+  title: document.getElementById("titleCreateTask-inp"),
+  dueDate: document.getElementById("dueDate"),
+  dueTime: document.getElementById("dueTime"),
+  description: document.getElementById("descriptionTask"),
+  category: document.getElementById("categoriesTask"),
+  priority: document.getElementById("priorityTask"),
+};
+
+inputsTask.edit = {
+  title: document.getElementById("nameTaskInput"),
+  dueDate: document.getElementById("dueDateEdit"),
+  dueTime: document.getElementById("dueTimeEdit"),
+  description: document.getElementById("descriptionTaskEdit"),
+  category: document.getElementById("categoriesTaskEdit"),
+  priority: document.getElementById("priorityTaskEdit"),
+};
+
+// funciones de validaciones
+
+function validarModal(inputFrom) {
+  if (
+    inputsTask[inputFrom].title.value === "" ||
+    inputsTask[inputFrom].dueDate.value === "" ||
+    inputsTask[inputFrom].dueTime.value === "" ||
+    inputsTask[inputFrom].category.value === "" ||
+    inputsTask[inputFrom].priority.value === ""
+  ) {
+    alert("Completa todos los campos");
+    return false; // falló
+  }
+  return true; //  exitosa
+}
+
 createTaskButton.addEventListener("click", function () {
+  if (!validarModal("add")) {
+    return;
+  }
+
   task.title = title.value;
   title.value = "";
-
   task.dueDate = dueDate.value;
   task.dueTime = dueTime.value;
   task.description = description.value;
@@ -149,5 +188,3 @@ createTaskButton.addEventListener("click", function () {
     task[element].value = "";
   }
 });
-
-// Creacion del objeto tarea
