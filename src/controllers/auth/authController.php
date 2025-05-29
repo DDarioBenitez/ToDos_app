@@ -1,35 +1,43 @@
 <?php
-header('Content-Type: application/json');
-require_once 'database.php';
+require_once __DIR__ . '/../../models/User.php';
+require_once __DIR__ . '/../../db/database.php';
 
-$action = $_POST['action'] ?? '';
+class AuthController {
+    private $db;
+    private $user;
 
-try {
-    $db = new Database();
-    $conn = $db->connect();
-
-    switch ($action) {
-        case 'login':
-            $email = $_POST['email'] ?? '';
-            $password = $_POST['password'] ?? '';
-
-            // Validación y autenticación
-            echo json_encode(['success' => true]);
-            break;
-
-        case 'register':
-            $name = $_POST['name'] ?? '';
-            $email = $_POST['email'] ?? '';
-            $password = password_hash($_POST['password'] ?? '', PASSWORD_DEFAULT);
-
-            // Registro de usuario
-            echo json_encode(['success' => true]);
-            break;
-
-        default:
-            echo json_encode(['success' => false, 'message' => 'Acción no válida']);
+    public function __construct() {
+        $this->db = (new Database())->connect();
+        $this->user = new User($this->db);
     }
-} catch (Exception $e) {
-    echo json_encode(['success' => false, 'message' => $e->getMessage()]);
+
+    public function register($data) {
+        $this->user->setName($data['name']);
+        $this->user->setEmail($data['email']);
+        $this->user->setPassword($data['password']);
+
+        if ($this->user->register()) {
+            session_start();
+            $_SESSION['user_id'] = $this->user->getId();
+            return ['success' => true, 'redirect' => '/dashboard'];
+        }
+        return ['success' => false, 'error' => 'Error en el registro'];
+    }
+
+    public function login($email, $password) {
+        if ($this->user->login($email, $password)) {
+            session_start();
+            $_SESSION['user_id'] = $this->user->getId();
+            $_SESSION['user_name'] = $this->user->getName();
+            return ['success' => true, 'redirect' => '/dashboard'];
+        }
+        return ['success' => false, 'error' => 'Credenciales inválidas'];
+    }
+
+    public function logout() {
+        session_start();
+        session_destroy();
+        return ['success' => true, 'redirect' => '/login'];
+    }
 }
 ?>
