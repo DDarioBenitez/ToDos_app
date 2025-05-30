@@ -1,22 +1,33 @@
 <?php
+require_once dirname(__DIR__) . '/src/controllers/auth/AuthController.php';
+
 header('Content-Type: application/json');
-require_once __DIR__ . '/../src/controllers/auth/AuthController.php';
+session_start();
 
 $auth = new AuthController();
-$data = json_decode(file_get_contents('php://input'), true);
+$action = $_GET['action'] ?? null;
 
-switch ($_SERVER['REQUEST_METHOD']) {
-    case 'POST':
-        if ($_GET['action'] == 'register') {
-            echo json_encode($auth->register($data));
-        } elseif ($_GET['action'] == 'login') {
-            echo json_encode($auth->login($data['email'], $data['password']));
-        }
+switch ($action) {
+    case 'register':
+        $data = json_decode(file_get_contents('php://input'), true);
+        echo json_encode($auth->register($data));
         break;
-    case 'GET':
-        if ($_GET['action'] == 'logout') {
-            echo json_encode($auth->logout());
-        }
+
+    case 'login':
+        $data = json_decode(file_get_contents('php://input'), true);
+        echo json_encode($auth->login($data['email'], $data['password']));
+        break;
+
+    case 'logout':
+        echo json_encode($auth->logout());
+        break;
+
+    case 'session':
+        echo json_encode($auth->getSession());
+        break;
+
+    default:
+        http_response_code(400);
+        echo json_encode(['error' => 'Acción no válida']);
         break;
 }
-?>

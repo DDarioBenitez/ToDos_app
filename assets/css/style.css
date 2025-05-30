@@ -1,12 +1,18 @@
 @import url("variables.css");
 
+html {
+    height: 100%;
+}
+
 body {
     background-color: var(--color-background);
     color: var(--color-text);
     line-height: 1.6;
-    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .container {
@@ -19,6 +25,8 @@ body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    width: calc(100% - 17rem);
+    overflow: hidden;
 }
 
 /* Header */

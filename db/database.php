@@ -12,8 +12,8 @@ class Database
     {
         $this->host = '127.0.0.1';
         $this->db_name = 'todo_app';
-        $this->username = 'pruebas';
-        $this->password = 'pruebas';
+        $this->username = 'root';
+        $this->password = '';
         $this->port = 3306;
     }
 

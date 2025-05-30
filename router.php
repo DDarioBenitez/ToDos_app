@@ -1,12 +1,35 @@
 <?php
+session_start();
+
 // Capturar la URL
 $uri = parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);
-// Ruta al archivo actual según la URL
 $fullPath = __DIR__ . $uri;
 
-// Si existe el archivo real (ej: imagen, JS, CSS), lo servimos directo
+// Si es un archivo real (css, js, img...), lo dejamos pasar
 if (file_exists($fullPath) && !is_dir($fullPath)) {
-    return false; // PHP servirá automáticamente el archivo
+    return false;
+}
+
+// Definir rutas públicas y protegidas
+$publicRoutes = [
+    "/",
+    "/login",
+    "/login.html",
+    "/register",
+    "/register.html",
+];
+
+$protectedRoutes = [
+    "/dashboard",
+    "/dashboard.html",
+];
+
+// Redireccionar si la ruta es privada y el usuario no está logueado
+if (in_array($uri, $protectedRoutes)) {
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: /login");
+        exit;
+    }
 }
 
 // Ruteo manual para las vistas

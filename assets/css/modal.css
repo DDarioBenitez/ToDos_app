@@ -71,7 +71,7 @@
     border-radius: 50%;
 }
 
-span:hover {
+.header-container span:hover {
     background: #ff4e50;
 }
 
@@ -195,20 +195,24 @@ span:hover {
 
 .container-buttons .negativeButton {
     color: #8b6b4d;
+    cursor: pointer;
 }
 .container-buttons .negativeButton:hover {
     transform: translateY(-2px); /* Efecto 3D sutil */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+    cursor: pointer;
 }
 
 .container-buttons .positiveButton {
     background-color: #ff6b35;
     color: #fff3e0;
+    cursor: pointer;
 }
 
 .container-buttons .positiveButton:hover {
     transform: translateY(-1px); /* Efecto 3D sutil */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+    cursor: pointer;
 }
 
 /* Estilos para modal de ver detalles !!!!!!!!!!!!!!!!!!!!! */
@@ -246,6 +250,7 @@ span:hover {
 
 .hearder-container .closeDetailsTask {
     top: -5px;
+    cursor: pointer;
 }
 
 .hearder-container .editarDetailsTask {
@@ -261,12 +266,14 @@ span:hover {
 
 .hearder-container .editarDetailsTask:hover {
     background-color: var(--color-primary);
+    cursor: pointer;
 }
 
 .penciIcon {
     width: 0.8rem;
     height: 0.8rem;
     display: inline;
+    cursor: pointer;
 }
 
 /* ------------------------------------------ */
@@ -281,4 +288,31 @@ span:hover {
     top: 0.2rem;
     font-weight: bold;
     color: var(--color-background);
+}
+
+.statusTaskDetails-container {
+    display: flex;
+    gap: 1rem;
+}
+.statusTaskDetails {
+    font-weight: 600;
+    border: 2px solid;
+    display: inline-block;
+    padding: 0rem 0.7rem;
+    background-color: transparent;
+    border-radius: 25%;
+    margin-top: 0.7rem;
+    font-weight: 400;
+    cursor: pointer;
+}
+.statusTaskDetails:hover {
+    transform: translateY(-2px); /* Efecto 3D sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra al hover */
+}
+
+#closeButtonModalEdit {
+    cursor: pointer;
+}
+#closeButtonModalAdd {
+    cursor: pointer;
 }
